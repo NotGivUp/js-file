@@ -14,5 +14,30 @@
 </head>
 <body>
 	<h2>3의 배수 찾기</h2>
+
+	<script>
+		var i = 0;
+		for(n = 1; n <= 100; n++){
+			if(n % 3 != 0){
+				continue;
+			}
+			document.write(n + ", ");
+		i++;
+		}
+		document.write("<br>");
+		document.write("<p>3의 배수의 갯수 : " + i + "</p>");
+
+
+	</script>
+<!--
+	var count = 0;
+	for(n = 1; n <= 100; n++){
+		if(n % 3 == 0){
+			count++;
+			document.write(n + ", ");
+		}
+		document.write("<p>3의 배수의 갯수 : ", count + "</p>");
+	}
+-->
 </body>
 </html>
