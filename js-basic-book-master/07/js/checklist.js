@@ -13,10 +13,24 @@ function addList() {
 function showList() {
     var list = "<ul>"; 
     for (var i=0; i<itemList.length; i++) {
-        list += "<li>" + itemList[i] + "</li>";
+        list += "<li>" + itemList[i] + "<span class='close' id=" + i + ">X</span></li>";
     }
     list += "</ul>";
 
     document.querySelector("#itemList").innerHTML = list;
+
+    var remove = document.querySelectorAll(".close");
+
+    for (var i=0; i<remove.length; i++) {
+        remove[i].addEventListener("click", removeList);
+    }
 }
+
+function removeList() {
+    var id = this.getAttribute("id");
+    itemList.splice(id, 1);
+    showList();
+}
+
+
 
